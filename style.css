@@ -1,0 +1,70 @@
+body {
+ font-family: Verdana, Helvetica, Arial, sans-serif;
+ font-size: 12px;
+ line-height: 1.25em;
+ background-color: #000000;
+ color: #FFFFFF;
+}
+
+h1 {
+ font-weight: bold;
+ font-size: 2.2em;
+ font-variant: small-caps;
+ line-height: 1em;
+ margin: 0 0 1em 0;
+ padding: 0;
+}
+
+h2 {
+ font-size: 1.2em;
+ font-weight: bold;
+ font-variant: small-caps;
+ margin: 2em 0 0.35em 0;
+ padding: 0;
+}
+
+p {
+ margin-top: 0;
+ padding-top: 0;
+}
+
+a {
+ color: #1b84e5;
+ text-decoration: none;
+}
+
+a:hover {
+ text-decoration: underline;
+}
+
+#page {
+ margin-left: auto;
+ margin-right: auto;
+ width: 55em !important;
+ width: 60em;
+}
+
+#logo {
+ width: 108px;
+ height: 108px;
+ background-image: url(logo.png);
+ background-repeat: no-repeat;
+ margin: 1em 0 2em 0;
+}
+
+#logo span {
+ display: none;
+}
+
+#logo em {
+ font-weight: bold;
+ font-style: normal;
+ font-variant: small-caps;
+}
+
+#description {
+ width: 36em;
+ padding-right: 6em;
+ padding-left:  12em !important;
+ padding-left:  0;
+}
