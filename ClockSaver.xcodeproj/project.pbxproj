@@ -1,0 +1,259 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D1F892407F352E9007DCE50 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167EFE841241C02AAC07 /* InfoPlist.strings */; };
+		4D3D994A07EF3D1C002E925D /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3D994907EF3D1C002E925D /* ScreenSaver.framework */; };
+		4D3D996B07EF3E5D002E925D /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D996907EF3E5D002E925D /* ClockView.m */; };
+		4DBBA7F915D6AF40006B47DC /* configure.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBA7F715D6AF40006B47DC /* configure.xib */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* ClockSaver.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockSaver.pch; sourceTree = "<group>"; };
+		4D3D994907EF3D1C002E925D /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
+		4D3D996807EF3E5D002E925D /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockView.h; sourceTree = "<group>"; };
+		4D3D996907EF3E5D002E925D /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockView.m; sourceTree = "<group>"; };
+		4DBBA7F815D6AF40006B47DC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/configure.xib; sourceTree = "<group>"; };
+		4DBBA7FA15D6AF48006B47DC /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/configure.xib; sourceTree = "<group>"; };
+		4DBBA7FB15D6AF4F006B47DC /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/configure.xib; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* ClockSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClockSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				4D3D994A07EF3D1C002E925D /* ScreenSaver.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* ClockSaver */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = ClockSaver;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				4D3D994907EF3D1C002E925D /* ScreenSaver.framework */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBA7F715D6AF40006B47DC /* configure.xib */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167EFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4D3D996807EF3E5D002E925D /* ClockView.h */,
+				4D3D996907EF3E5D002E925D /* ClockView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* ClockSaver.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* ClockSaver.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* ClockSaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D418544086DA3720050B210 /* Build configuration list for PBXNativeTarget "ClockSaver" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClockSaver;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = ClockSaver;
+			productReference = 8D5B49B6048680CD000E48DA /* ClockSaver.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = 4D418548086DA3720050B210 /* Build configuration list for PBXProject "ClockSaver" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				English,
+				German,
+				Japanese,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* ClockSaver */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* ClockSaver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D1F892407F352E9007DCE50 /* InfoPlist.strings in Resources */,
+				4DBBA7F915D6AF40006B47DC /* configure.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D3D996B07EF3E5D002E925D /* ClockView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4DBBA7F715D6AF40006B47DC /* configure.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DBBA7F815D6AF40006B47DC /* English */,
+				4DBBA7FA15D6AF48006B47DC /* German */,
+				4DBBA7FB15D6AF4F006B47DC /* Japanese */,
+			);
+			name = configure.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D418545086DA3720050B210 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+			};
+			name = Development;
+		};
+		4D418546086DA3720050B210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NDEBUG,
+					NS_BLOCK_ASSERTIONS,
+				);
+			};
+			name = Release;
+		};
+		4D418549086DA3720050B210 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_PREFIX_HEADER = ClockSaver.pch;
+				INFOPLIST_FILE = Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = ClockSaver;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Development;
+		};
+		4D41854A086DA3720050B210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_PREFIX_HEADER = ClockSaver.pch;
+				INFOPLIST_FILE = Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = ClockSaver;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D418544086DA3720050B210 /* Build configuration list for PBXNativeTarget "ClockSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D418545086DA3720050B210 /* Development */,
+				4D418546086DA3720050B210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		4D418548086DA3720050B210 /* Build configuration list for PBXProject "ClockSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D418549086DA3720050B210 /* Development */,
+				4D41854A086DA3720050B210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
