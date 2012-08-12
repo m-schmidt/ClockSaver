@@ -1,5 +1,5 @@
 // ClockView.m -- screensaver view that shows an analog clock
-// Mac OS X port Copyright (C) 2006 Michael Schmidt <no.more.spam@gmx.net>.
+// Mac OS X port Copyright (C) 2006 Michael Schmidt <mschmidt.github@gmail.com>.
 //
 // ClockSaver is derived from the KDE screensaver module KClock.
 // KDE's KClock is Copyright (C) 2003 Melchior Franz <mfranz@kde.org>.
@@ -77,11 +77,11 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     {
         defaults       = [[NSMutableDictionary alloc] init];
         baseTransform  = nil;
-      
+
         [self setAnimationTimeInterval: 1.0];
         [self computeBaseTransformForFrame: frame];
     }
-  
+
     return self;
 }
 
@@ -98,7 +98,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 {
     if (configureSheet == nil)
         [NSBundle loadNibNamed:@"configure" owner:self];
-  
+
     for (id key in @[csHourColor,
                      csMinuteColor,
                      csSecondColor,
@@ -120,7 +120,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
     for (id key in [defaults allKeys])
         [sharedDefaults setValue:[defaults valueForKey:key] forKey:key];
-  
+
     [sharedDefaults synchronize];
 
     [self computeBaseTransformForFrame: [self frame]];
@@ -129,15 +129,14 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 
 - (IBAction)performCancel:(id)sender
-{  
+{
     [NSApp endSheet: configureSheet];
 }
 
 
 
-//
-// drawing routines
-//
+#pragma mark -
+#pragma mark Drawing Routines
 
 
 
@@ -171,22 +170,22 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     // Blank screen
     [COLOR(csBackgroundColor) set];
     NSRectFill ([self bounds]);
-  
+
     // Draw clock
     [self drawScale];
-  
+
     [self drawHandAtAngle: ([now hourOfDay] % 12) * 30.0 + [now minuteOfHour] * 0.5
                    length: 600.0
                     width: 55.0
                     color: COLOR(csHourColor)
                      disc: NO];
-  
+
     [self drawHandAtAngle: [now minuteOfHour] * 6.0 + [now secondOfMinute] * 0.1
                    length: 900.0
                     width: 40.0
                     color: COLOR(csMinuteColor)
                      disc: YES];
-  
+
     if ([sharedDefaults boolForKey:csShowSecondHand])
         [self drawHandAtAngle: [now secondOfMinute] * 6.0
                        length: 900.0
@@ -208,7 +207,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     // Draw a line
     NSGraphicsContext *context = [NSGraphicsContext currentContext];
     NSBezierPath *path         = [NSBezierPath bezierPath];
-  
+
     [context saveGraphicsState];
     [transform concat];
 
@@ -232,16 +231,16 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     // Draw a circle
     NSGraphicsContext *context = [NSGraphicsContext currentContext];
     NSBezierPath *path         = [NSBezierPath bezierPath];
-  
+
     [context saveGraphicsState];
     [transform concat];
-  
+
     [path appendBezierPathWithArcWithCenter: NSZeroPoint
                                      radius: radius
                                  startAngle: 0.0
                                    endAngle: 360.0];
     [path fill];
-  
+
     [context restoreGraphicsState];
 }
 
@@ -255,24 +254,24 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
                    disc: (BOOL)disc
 {
     CGFloat shadowWidth = 1.0;
-  
+
     // Draw shadow for hand
     [COLOR(csShadowColor) set];
-  
+
     if (disc)
         [self drawDiscWithRadius: width * 1.3 + shadowWidth];
-  
+
     [self drawRadialAtAngle: angle
                          r0: 0.75 * width
                          r1: length + shadowWidth
                       width: width  + shadowWidth];
-  
+
     // Draw hand itself
     [color set];
-  
+
     if (disc)
         [self drawDiscWithRadius: width * 1.3];
-  
+
     [self drawRadialAtAngle: angle
                          r0: 0.75 * width
                          r1: length
@@ -286,7 +285,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 {
     [COLOR(csScaleColor) set];
     int angle;
-  
+
     // For each minute...
     for (angle = 0; angle < 360; angle += 6)
     {

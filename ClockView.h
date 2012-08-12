@@ -1,5 +1,5 @@
 // ClockView.h -- screensaver view that shows an analog clock
-// Mac OS X port Copyright (C) 2006 Michael Schmidt <no.more.spam@gmx.net>.
+// Mac OS X port Copyright (C) 2006 Michael Schmidt <mschmidt.github@gmail.com>.
 //
 // ClockSaver is derived from the KDE screensaver module KClock.
 // KDE's KClock is Copyright (C) 2003 Melchior Franz <mfranz@kde.org>.

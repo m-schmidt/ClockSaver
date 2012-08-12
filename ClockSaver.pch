@@ -1,7 +1,7 @@
 // ClockSaver -- common prefix header
 
 #ifdef __OBJC__
-# import <Cocoa/Cocoa.h>
+    #import <Cocoa/Cocoa.h>
 #endif
 
 #define min(a,b) (((a) <= (b)) ? (a) : (b));
