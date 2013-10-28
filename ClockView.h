@@ -1,5 +1,5 @@
 // ClockView.h -- screensaver view that shows an analog clock
-// Mac OS X port Copyright (C) 2006 Michael Schmidt <mschmidt.github@gmail.com>.
+// Mac OS X port Copyright (C) 2006-2013 Michael Schmidt <github@mschmidt.me>.
 //
 // ClockSaver is derived from the KDE screensaver module KClock.
 // KDE's KClock is Copyright (C) 2003 Melchior Franz <mfranz@kde.org>.
@@ -14,11 +14,11 @@
 
 @interface ClockView : ScreenSaverView
 {
-    IBOutlet NSWindow   *configureSheet;
-
     NSMutableDictionary *defaults;
     NSAffineTransform   *baseTransform;
 }
+
+@property (strong, nonatomic) IBOutlet NSWindow *configureSheet;
 
 - (IBAction)performOK:(id)sender;
 - (IBAction)performCancel:(id)sender;
