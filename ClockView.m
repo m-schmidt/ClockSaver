@@ -49,25 +49,25 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 
 
-+ (void)initialize
-{
-    sharedDefaults = [ScreenSaverDefaults defaultsForModuleWithName:[[NSBundle bundleForClass:[self class]] bundleIdentifier]];
-
-    [sharedDefaults registerDefaults:
-            @{csHourColor:      [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
-              csMinuteColor:    [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
-              csSecondColor:    [NSArchiver archivedDataWithRootObject:[NSColor redColor]],
-              csScaleColor:     [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
-              csShadowColor:    [NSArchiver archivedDataWithRootObject:[NSColor grayColor]],
-              csBackgroundColor:[NSArchiver archivedDataWithRootObject:[NSColor blackColor]],
-              csScaleSize:      @0.90f,
-              csShowSecondHand: @YES}];
-}
-
-
-
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
+    static dispatch_once_t onceToken;
+
+    dispatch_once(&onceToken, ^{
+        sharedDefaults = [ScreenSaverDefaults defaultsForModuleWithName:[[NSBundle bundleForClass:[self class]] bundleIdentifier]];
+
+        [sharedDefaults registerDefaults:
+         @{csHourColor:      [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
+           csMinuteColor:    [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
+           csSecondColor:    [NSArchiver archivedDataWithRootObject:[NSColor redColor]],
+           csScaleColor:     [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
+           csShadowColor:    [NSArchiver archivedDataWithRootObject:[NSColor grayColor]],
+           csBackgroundColor:[NSArchiver archivedDataWithRootObject:[NSColor blackColor]],
+           csScaleSize:      @0.90f,
+           csShowSecondHand: @YES}];
+
+    });
+
     if ((self = [super initWithFrame:frame isPreview:isPreview]))
     {
         defaults       = [[NSMutableDictionary alloc] init];
