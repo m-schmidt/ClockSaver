@@ -27,6 +27,8 @@ Installation:
 Version History:
 ----------------
 
+- 2.0.3:    Modernized project for OS X El Capitan
+
 - 2.0.2:    Modernized project for OS X Mavericks
 
 - 2.0.0:    Modernized project for OS X Mountain Lion
