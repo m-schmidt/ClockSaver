@@ -1,5 +1,7 @@
-// ClockView.m -- screensaver view that shows an analog clock
-// Mac OS X port Copyright (C) 2006-2013 Michael Schmidt <github@mschmidt.me>.
+// ClockView.m
+// Screensaver view that shows an analog clock
+//
+// OS X port Copyright (C) 2006-2015 Michael Schmidt <github@mschmidt.me>.
 //
 // ClockSaver is derived from the KDE screensaver module KClock.
 // KDE's KClock is Copyright (C) 2003 Melchior Franz <mfranz@kde.org>.
@@ -27,9 +29,7 @@
 #define csShowSecondHand  @"showSecondHand"
 
 
-
 static ScreenSaverDefaults __strong *sharedDefaults = nil;
-
 
 
 @interface ClockView (DrawingPrimitives)
@@ -38,19 +38,15 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 - (void)drawRadialAtAngle:(CGFloat)alpha r0:(CGFloat)r0 r1:(CGFloat)r1 width:(CGFloat)width;
 - (void)drawDiscWithRadius:(CGFloat)radius;
-- (void)drawHandAtAngle:(CGFloat)angle length:(CGFloat)length width:(CGFloat)width color:(NSColor*)color disc:(BOOL)disc;
+- (void)drawHandAtAngle:(CGFloat)angle length:(CGFloat)length width:(CGFloat)width color:(NSColor *)color disc:(BOOL)disc;
 - (void)drawScale;
 
 @end
 
 
-
 @implementation ClockView
 
-
-
-- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
-{
+- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
@@ -68,8 +64,8 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
     });
 
-    if ((self = [super initWithFrame:frame isPreview:isPreview]))
-    {
+    if ((self = [super initWithFrame:frame isPreview:isPreview])) {
+
         defaults       = [[NSMutableDictionary alloc] init];
         baseTransform  = nil;
 
@@ -81,36 +77,26 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
+- (BOOL)hasConfigureSheet {
 
-- (BOOL)hasConfigureSheet
-{
     return YES;
 }
 
 
+- (NSWindow *)configureSheet {
 
-- (NSWindow*)configureSheet
-{
     if (_configureSheet == nil)
        [[NSBundle bundleForClass:[self class]] loadNibNamed:@"configure" owner:self topLevelObjects:nil];
 
-    for (id key in @[csHourColor,
-                     csMinuteColor,
-                     csSecondColor,
-                     csScaleColor,
-                     csShadowColor,
-                     csBackgroundColor,
-                     csScaleSize,
-                     csShowSecondHand])
+    for (id key in @[csHourColor, csMinuteColor, csSecondColor, csScaleColor, csShadowColor, csBackgroundColor, csScaleSize, csShowSecondHand])
         [defaults setValue:[sharedDefaults valueForKey:key] forKey:key];
 
     return _configureSheet;
 }
 
 
+- (IBAction)performOK:(id)sender {
 
-- (IBAction)performOK:(id)sender
-{
     [NSApp endSheet:_configureSheet];
 
     for (id key in [defaults allKeys])
@@ -122,22 +108,19 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
+- (IBAction)performCancel:(id)sender {
 
-- (IBAction)performCancel:(id)sender
-{
     [NSApp endSheet:_configureSheet];
 }
-
 
 
 #pragma mark -
 #pragma mark Drawing Routines
 
 
-
 // Basic transformation matrix for drawing operations
-- (void)computeBaseTransformForFrame:(NSRect)frame
-{
+- (void)computeBaseTransformForFrame:(NSRect)frame {
+
     baseTransform = [NSAffineTransform transform];
 
     // Move square of clock area to center of screen
@@ -158,8 +141,8 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
-- (void)animateOneFrame
-{
+- (void)animateOneFrame {
+
     NSCalendarDate *now = [NSCalendarDate calendarDate];
 
     // Blank screen
@@ -190,14 +173,13 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
-
 // Draws a radial line segment (clock hands and scale)
-- (void)drawRadialAtAngle:(CGFloat)alpha r0:(CGFloat)r0 r1:(CGFloat)r1 width:(CGFloat)width
-{
+- (void)drawRadialAtAngle:(CGFloat)alpha r0:(CGFloat)r0 r1:(CGFloat)r1 width:(CGFloat)width {
+
     // Transform screen coordinates
     NSAffineTransform *transform = [NSAffineTransform transform];
     [transform appendTransform:baseTransform];
-    [transform rotateByDegrees:90-alpha];
+    [transform rotateByDegrees:90 - alpha];
 
     // Draw a line
     NSGraphicsContext *context = [NSGraphicsContext currentContext];
@@ -215,10 +197,9 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
-
 // Draws a circle located at the origin (part of minuts and second hand)
-- (void)drawDiscWithRadius:(CGFloat)radius
-{
+- (void)drawDiscWithRadius:(CGFloat)radius {
+
     // Transform screen coordinates
     NSAffineTransform *transform = [NSAffineTransform transform];
     [transform appendTransform:baseTransform];
@@ -230,24 +211,20 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     [context saveGraphicsState];
     [transform concat];
 
-    [path appendBezierPathWithArcWithCenter:NSZeroPoint
-                                     radius:radius
-                                 startAngle:0.0
-                                   endAngle:360.0];
+    [path appendBezierPathWithArcWithCenter:NSZeroPoint radius:radius startAngle:0.0 endAngle:360.0];
     [path fill];
 
     [context restoreGraphicsState];
 }
 
 
-
 // Draws a clock hand with certain attributes
 - (void)drawHandAtAngle:(CGFloat)angle
                  length:(CGFloat)length
                   width:(CGFloat)width
-                  color:(NSColor*)color
-                   disc:(BOOL)disc
-{
+                  color:(NSColor *)color
+                   disc:(BOOL)disc {
+
     CGFloat shadowWidth = 1.0;
 
     // Draw shadow for hand
@@ -256,10 +233,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     if (disc)
         [self drawDiscWithRadius:width * 1.3 + shadowWidth];
 
-    [self drawRadialAtAngle:angle
-                         r0:0.75 * width
-                         r1:length + shadowWidth
-                      width:width  + shadowWidth];
+    [self drawRadialAtAngle:angle r0:0.75 * width r1:length + shadowWidth width:width  + shadowWidth];
 
     // Draw hand itself
     [color set];
@@ -267,33 +241,25 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     if (disc)
         [self drawDiscWithRadius:width * 1.3];
 
-    [self drawRadialAtAngle:angle
-                         r0:0.75 * width
-                         r1:length
-                      width:width];
+    [self drawRadialAtAngle:angle r0:0.75 * width r1:length width:width];
 }
 
 
-
 // Draws the clock scale
-- (void)drawScale
-{
+- (void)drawScale {
+
     [COLOR(csScaleColor) set];
     int angle;
 
     // For each minute...
-    for (angle = 0; angle < 360; angle += 6)
-    {
-        if (angle % 30)
-            [self drawRadialAtAngle:angle
-                                 r0:920.0
-                                 r1:980.0
-                              width:15.0];
-        else
-            [self drawRadialAtAngle:angle
-                                 r0:825.0
-                                 r1:980.0
-                              width:40.0];
+    for (angle = 0; angle < 360; angle += 6) {
+
+        if (angle % 30) {
+            [self drawRadialAtAngle:angle r0:920.0 r1:980.0 width:15.0];
+        }
+        else {
+            [self drawRadialAtAngle:angle r0:825.0 r1:980.0 width:40.0];
+        }
     }
 }
 

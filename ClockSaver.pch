@@ -1,4 +1,5 @@
-// ClockSaver -- common prefix header
+// ClockSaver
+// Common prefix header
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
