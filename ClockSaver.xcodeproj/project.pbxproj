@@ -130,7 +130,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = 4D418548086DA3720050B210 /* Build configuration list for PBXProject "ClockSaver" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -224,6 +224,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.m-schmidt.ClockSaver";
 			};
 			name = Development;
 		};
@@ -236,17 +237,19 @@
 					NDEBUG,
 					NS_BLOCK_ASSERTIONS,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.m-schmidt.ClockSaver";
 			};
 			name = Release;
 		};
 		4D418549086DA3720050B210 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = ClockSaver.pch;
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ClockSaver;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = saver;
@@ -256,7 +259,6 @@
 		4D41854A086DA3720050B210 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				GCC_PREFIX_HEADER = ClockSaver.pch;
 				INFOPLIST_FILE = Info.plist;

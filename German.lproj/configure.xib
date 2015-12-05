@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment version="1030" defaultVersion="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ClockView">
@@ -11,8 +11,8 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
-        <window title="ClockSaver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="ConfigureSheet" customClass="NSPanel">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="ClockSaver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="ConfigureSheet" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="325" y="635" width="259" height="311"/>
@@ -25,6 +25,7 @@
                     <button verticalHuggingPriority="750" id="8">
                         <rect key="frame" x="59" y="12" width="108" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="83">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -39,6 +40,7 @@ Gw
                     <button verticalHuggingPriority="750" id="9">
                         <rect key="frame" x="167" y="12" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="84">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -53,6 +55,7 @@ DQ
                     <colorWell id="22">
                         <rect key="frame" x="131" y="156" width="54" height="26"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <binding destination="20" name="value" keyPath="selection.defaults.hourColor" id="71">
@@ -65,6 +68,7 @@ DQ
                     <colorWell id="23">
                         <rect key="frame" x="131" y="122" width="54" height="26"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <binding destination="20" name="value" keyPath="selection.defaults.minuteColor" id="73">
@@ -77,19 +81,21 @@ DQ
                     <colorWell id="24">
                         <rect key="frame" x="131" y="88" width="54" height="26"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
-                            <binding destination="20" name="enabled" keyPath="selection.defaults.showSecondHand" id="66"/>
                             <binding destination="20" name="value" keyPath="selection.defaults.secondColor" id="75">
                                 <dictionary key="options">
                                     <string key="NSValueTransformerName">NSUnarchiveFromData</string>
                                 </dictionary>
                             </binding>
+                            <binding destination="20" name="enabled" keyPath="selection.defaults.showSecondHand" id="66"/>
                         </connections>
                     </colorWell>
                     <colorWell id="25">
                         <rect key="frame" x="131" y="190" width="54" height="26"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <binding destination="20" name="value" keyPath="selection.defaults.scaleColor" id="69">
@@ -100,8 +106,9 @@ DQ
                         </connections>
                     </colorWell>
                     <textField verticalHuggingPriority="750" id="26">
-                        <rect key="frame" x="27" y="127" width="99" height="17"/>
+                        <rect key="frame" x="27" y="127" width="94" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Minutenzeiger:" id="85">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -109,26 +116,19 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="27">
-                        <rect key="frame" x="27" y="161" width="99" height="17"/>
+                        <rect key="frame" x="27" y="161" width="96" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Stundenzeiger:" id="86">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="28">
-                        <rect key="frame" x="17" y="93" width="109" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Sekundenzeiger:" id="87">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField verticalHuggingPriority="750" id="29">
-                        <rect key="frame" x="47" y="195" width="79" height="17"/>
+                        <rect key="frame" x="45" y="195" width="76" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Ziffernblatt:" id="88">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -138,6 +138,7 @@ DQ
                     <button id="30">
                         <rect key="frame" x="30" y="58" width="197" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <buttonCell key="cell" type="check" title="Sekundenzeiger einblenden" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="89">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -149,6 +150,7 @@ DQ
                     <slider verticalHuggingPriority="750" id="31">
                         <rect key="frame" x="129" y="267" width="112" height="25"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <sliderCell key="cell" alignment="left" minValue="0.10000000000000001" maxValue="1" doubleValue="0.90000000000000002" tickMarkPosition="below" numberOfTickMarks="6" sliderType="linear" id="90">
                             <font key="font" size="12" name="Helvetica"/>
                         </sliderCell>
@@ -159,6 +161,7 @@ DQ
                     <textField verticalHuggingPriority="750" id="32">
                         <rect key="frame" x="80" y="278" width="46" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Größe:" id="91">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -168,6 +171,7 @@ DQ
                     <textField verticalHuggingPriority="750" id="33">
                         <rect key="frame" x="128" y="245" width="31" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="klein" id="92">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -177,13 +181,25 @@ DQ
                     <textField verticalHuggingPriority="750" id="34">
                         <rect key="frame" x="212" y="245" width="30" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="groß" id="93">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField verticalHuggingPriority="750" id="28">
+                        <rect key="frame" x="17" y="93" width="106" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Sekundenzeiger:" id="87">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
+                <animations/>
             </view>
         </window>
         <objectController id="20" userLabel="ConfigureController">

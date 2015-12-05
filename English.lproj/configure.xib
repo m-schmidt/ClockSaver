@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment version="1030" defaultVersion="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ClockView">
@@ -11,20 +11,20 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
-        <window title="ClockSaver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="ConfigureSheet" customClass="NSPanel">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="ClockSaver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="ConfigureSheet" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="445" y="637" width="243" height="311"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <rect key="contentRect" x="445" y="637" width="245" height="312"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="6">
-                <rect key="frame" x="0.0" y="0.0" width="243" height="311"/>
+                <rect key="frame" x="0.0" y="0.0" width="245" height="312"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" id="8">
-                        <rect key="frame" x="69" y="12" width="82" height="32"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8">
+                        <rect key="frame" x="70" y="13" width="82" height="32"/>
+                        <animations/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="66">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -36,9 +36,9 @@ Gw
                             <action selector="performCancel:" target="-2" id="46"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="9">
-                        <rect key="frame" x="151" y="12" width="78" height="32"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                        <rect key="frame" x="152" y="13" width="78" height="32"/>
+                        <animations/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="67">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -50,9 +50,9 @@ DQ
                             <action selector="performOK:" target="-2" id="18"/>
                         </connections>
                     </button>
-                    <colorWell id="22">
-                        <rect key="frame" x="115" y="156" width="54" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22">
+                        <rect key="frame" x="116" y="157" width="54" height="26"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <binding destination="20" name="value" keyPath="selection.defaults.hourColor" id="54">
@@ -62,9 +62,9 @@ DQ
                             </binding>
                         </connections>
                     </colorWell>
-                    <colorWell id="23">
-                        <rect key="frame" x="115" y="122" width="54" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23">
+                        <rect key="frame" x="116" y="123" width="54" height="26"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <binding destination="20" name="value" keyPath="selection.defaults.minuteColor" id="56">
@@ -74,9 +74,9 @@ DQ
                             </binding>
                         </connections>
                     </colorWell>
-                    <colorWell id="24">
-                        <rect key="frame" x="115" y="88" width="54" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24">
+                        <rect key="frame" x="116" y="89" width="54" height="26"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <binding destination="20" name="value" keyPath="selection.defaults.secondColor" id="58">
@@ -86,9 +86,9 @@ DQ
                             </binding>
                         </connections>
                     </colorWell>
-                    <colorWell id="25">
-                        <rect key="frame" x="115" y="190" width="54" height="26"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25">
+                        <rect key="frame" x="116" y="191" width="54" height="26"/>
+                        <animations/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <binding destination="20" name="value" keyPath="selection.defaults.scaleColor" id="52">
@@ -98,27 +98,18 @@ DQ
                             </binding>
                         </connections>
                     </colorWell>
-                    <textField verticalHuggingPriority="750" id="26">
-                        <rect key="frame" x="19" y="127" width="91" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Minute-hand:" id="68">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="27">
-                        <rect key="frame" x="31" y="161" width="79" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="75" translatesAutoresizingMaskIntoConstraints="NO" id="27">
+                        <rect key="frame" x="34" y="162" width="74" height="17"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Hour-hand:" id="69">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="28">
-                        <rect key="frame" x="17" y="93" width="93" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="89" translatesAutoresizingMaskIntoConstraints="NO" id="28">
+                        <rect key="frame" x="18" y="94" width="90" height="17"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Second-hand:" id="70">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -128,18 +119,18 @@ DQ
                             <binding destination="20" name="enabled" keyPath="selection.defaults.showSecondHand" id="45"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="29">
-                        <rect key="frame" x="70" y="195" width="40" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="36" translatesAutoresizingMaskIntoConstraints="NO" id="29">
+                        <rect key="frame" x="67" y="196" width="41" height="17"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Scale:" id="71">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button id="30">
-                        <rect key="frame" x="32" y="58" width="145" height="18"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30">
+                        <rect key="frame" x="33" y="59" width="145" height="18"/>
+                        <animations/>
                         <buttonCell key="cell" type="check" title="Show Second-Hand" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="72">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -148,9 +139,9 @@ DQ
                             <binding destination="20" name="value" keyPath="selection.defaults.showSecondHand" id="41"/>
                         </connections>
                     </button>
-                    <slider verticalHuggingPriority="750" id="31">
-                        <rect key="frame" x="113" y="267" width="112" height="25"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31">
+                        <rect key="frame" x="114" y="268" width="112" height="25"/>
+                        <animations/>
                         <sliderCell key="cell" alignment="left" minValue="0.10000000000000001" maxValue="1" doubleValue="0.90000000000000002" tickMarkPosition="below" numberOfTickMarks="6" sliderType="linear" id="73">
                             <font key="font" size="12" name="Helvetica"/>
                         </sliderCell>
@@ -158,35 +149,46 @@ DQ
                             <binding destination="20" name="value" keyPath="selection.defaults.scaleSize" id="42"/>
                         </connections>
                     </slider>
-                    <textField verticalHuggingPriority="750" id="32">
-                        <rect key="frame" x="76" y="274" width="34" height="17"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="30" translatesAutoresizingMaskIntoConstraints="NO" id="32">
+                        <rect key="frame" x="77" y="275" width="34" height="17"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Size:" id="74">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="33">
-                        <rect key="frame" x="112" y="245" width="33" height="14"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="29" translatesAutoresizingMaskIntoConstraints="NO" id="33">
+                        <rect key="frame" x="113" y="246" width="33" height="14"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Small" id="75">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="34">
-                        <rect key="frame" x="192" y="245" width="34" height="14"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="30" translatesAutoresizingMaskIntoConstraints="NO" id="34">
+                        <rect key="frame" x="193" y="246" width="34" height="14"/>
+                        <animations/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Large" id="76">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="87" translatesAutoresizingMaskIntoConstraints="NO" id="26">
+                        <rect key="frame" x="22" y="128" width="86" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Minute-hand:" id="68">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
+                <animations/>
             </view>
+            <point key="canvasLocation" x="539.5" y="437"/>
         </window>
         <objectController id="20" userLabel="ConfigureController">
             <declaredKeys>
