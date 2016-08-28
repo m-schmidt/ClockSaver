@@ -46,11 +46,11 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 @implementation ClockView
 
-- (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
+- (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
-        sharedDefaults = [ScreenSaverDefaults defaultsForModuleWithName:[[NSBundle bundleForClass:[self class]] bundleIdentifier]];
+        sharedDefaults = [ScreenSaverDefaults defaultsForModuleWithName:[NSBundle bundleForClass:[self class]].bundleIdentifier];
 
         [sharedDefaults registerDefaults:
          @{csHourColor:      [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
@@ -69,7 +69,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
         defaults       = [[NSMutableDictionary alloc] init];
         baseTransform  = nil;
 
-        [self setAnimationTimeInterval:1.0];
+        self.animationTimeInterval = 1.0;
         [self computeBaseTransformForFrame:frame];
     }
 
@@ -99,12 +99,12 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
     [NSApp endSheet:_configureSheet];
 
-    for (id key in [defaults allKeys])
+    for (id key in defaults.allKeys)
         [sharedDefaults setValue:[defaults valueForKey:key] forKey:key];
 
     [sharedDefaults synchronize];
 
-    [self computeBaseTransformForFrame:[self frame]];
+    [self computeBaseTransformForFrame:self.frame];
 }
 
 
@@ -147,7 +147,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
     // Blank screen
     [COLOR(csBackgroundColor) set];
-    NSRectFill ([self bounds]);
+    NSRectFill (self.bounds);
 
     // Draw clock
     [self drawScale];
@@ -188,7 +188,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     [context saveGraphicsState];
     [transform concat];
 
-    [path setLineWidth:width];
+    path.lineWidth = width;
     [path moveToPoint:NSMakePoint (r0, 0.0)];
     [path lineToPoint:NSMakePoint (r1, 0.0)];
     [path stroke];
