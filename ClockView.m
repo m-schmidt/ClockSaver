@@ -85,19 +85,19 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 - (NSWindow *)configureSheet {
 
-    if (_configureSheet == nil)
+    if (self.configSheet == nil)
        [[NSBundle bundleForClass:[self class]] loadNibNamed:@"configure" owner:self topLevelObjects:nil];
 
     for (id key in @[csHourColor, csMinuteColor, csSecondColor, csScaleColor, csShadowColor, csBackgroundColor, csScaleSize, csShowSecondHand])
         [defaults setValue:[sharedDefaults valueForKey:key] forKey:key];
 
-    return _configureSheet;
+    return self.configSheet;
 }
 
 
 - (IBAction)performOK:(id)sender {
 
-    [NSApp endSheet:_configureSheet];
+    [NSApp endSheet:self.configureSheet];
 
     for (id key in defaults.allKeys)
         [sharedDefaults setValue:[defaults valueForKey:key] forKey:key];
@@ -110,7 +110,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 - (IBAction)performCancel:(id)sender {
 
-    [NSApp endSheet:_configureSheet];
+    [NSApp endSheet:self.configureSheet];
 }
 
 

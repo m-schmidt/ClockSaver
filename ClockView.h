@@ -20,7 +20,7 @@
     NSAffineTransform   *baseTransform;
 }
 
-@property (strong, nonatomic) IBOutlet NSWindow *configureSheet;
+@property (strong, nonatomic) IBOutlet NSWindow *configSheet;
 
 - (IBAction)performOK:(id)sender;
 - (IBAction)performCancel:(id)sender;
