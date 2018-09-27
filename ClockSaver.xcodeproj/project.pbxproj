@@ -299,7 +299,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = ClockSaver;
 				SDKROOT = macosx;
@@ -339,7 +338,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = ClockSaver;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = saver;
