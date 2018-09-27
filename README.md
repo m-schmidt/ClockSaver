@@ -5,9 +5,9 @@ ClockSaver
 What it is:
 -----------
 
-ClockSaver is a Screensaver module for OS X  Mountain Lion that displays a simple analog clock. ClockSaver is a port of the KDE Screensaver-module "KClock" written by Melchior Franz <mfranz@kde.org>.
+ClockSaver is a Screensaver module for macOS Mojave that displays a simple analog clock. ClockSaver is a port of the KDE Screensaver-module "KClock" written by Melchior Franz <mfranz@kde.org>.
 
-OS X port by Michael Schmidt <github@mschmidt.me>
+macOS port by Michael Schmidt <github@mschmidt.me>
 
 Many thanks for the Japanese localization to Christopher Li <ChrisLi@Bridge1.com>.
 
@@ -19,13 +19,15 @@ Installation:
 
 2. Start System Preferences.app and:
 
-    -   open the "Display & Screen Saver" pane
-    -   go to the "Screen Savers" tab
-    -   select "ClockSaver" in the list of modules
+    - Open the "Display & Screen Saver" pane
+    - Go to the "Screen Savers" tab
+    - Select "ClockSaver" in the list of modules
 
 
 Version History:
 ----------------
+
+- 2.0.5:    Modernized project for macOS Mojave
 
 - 2.0.3:    Modernized project for OS X El Capitan
 
