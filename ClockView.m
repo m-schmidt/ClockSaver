@@ -34,6 +34,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
         self.animationTimeInterval = 1.0;
         [self registerUserDefaults];
+        [self resetConfiguration];
         [self computeBaseTransformForFrame:frame];
     }
 
@@ -67,14 +68,37 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
+- (void)resetConfiguration {
+
+    scaleColor  = [self decodedColor:[sharedDefaults valueForKey:csScaleColor]];
+    hourColor   = [self decodedColor:[sharedDefaults valueForKey:csHourColor]];
+    minuteColor = [self decodedColor:[sharedDefaults valueForKey:csMinuteColor]];
+    secondColor = [self decodedColor:[sharedDefaults valueForKey:csSecondColor]];
+
+    scaleSize      = [sharedDefaults doubleForKey:csScaleSize];
+    showSecondHand = [sharedDefaults boolForKey:csShowSecondHand];
+}
+
+
+- (void)saveConfiguration {
+
+    [sharedDefaults setValue:[self encodedColor:scaleColor]  forKey:csScaleColor];
+    [sharedDefaults setValue:[self encodedColor:hourColor]   forKey:csHourColor];
+    [sharedDefaults setValue:[self encodedColor:minuteColor] forKey:csMinuteColor];
+    [sharedDefaults setValue:[self encodedColor:secondColor] forKey:csSecondColor];
+
+    [sharedDefaults setDouble:scaleSize forKey:csScaleSize];
+    [sharedDefaults setBool:showSecondHand forKey:csShowSecondHand];
+
+    [sharedDefaults synchronize];
+}
+
+
 - (NSWindow *)configureSheet {
 
-    if (self.configSheet == nil)
-       [[NSBundle bundleForClass:[self class]] loadNibNamed:@"configure" owner:self topLevelObjects:nil];
-
-    for (id key in @[csHourColor, csMinuteColor, csSecondColor, csScaleColor, csShadowColor, csBackgroundColor, csScaleSize, csShowSecondHand])
-        [defaults setValue:[sharedDefaults valueForKey:key] forKey:key];
-
+    if (self.configSheet == nil) {
+       [[NSBundle bundleForClass:[self class]] loadNibNamed:@"configureSheet" owner:self topLevelObjects:nil];
+    }
     return self.configSheet;
 }
 
@@ -82,12 +106,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 - (IBAction)performOK:(id)sender {
 
     [NSApp endSheet:self.configureSheet];
-
-    for (id key in defaults.allKeys)
-        [sharedDefaults setValue:[defaults valueForKey:key] forKey:key];
-
-    [sharedDefaults synchronize];
-
+    [self saveConfiguration];
     [self computeBaseTransformForFrame:self.frame];
 }
 
@@ -95,6 +114,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 - (IBAction)performCancel:(id)sender {
 
     [NSApp endSheet:self.configureSheet];
+    [self resetConfiguration];
 }
 
 
