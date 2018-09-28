@@ -14,9 +14,6 @@
 #import "ClockView.h"
 
 
-// Extract a color object from the defaults
-#define COLOR(N)  ((NSColor*)[NSUnarchiver unarchiveObjectWithData:[sharedDefaults objectForKey:(N)]])
-
 // Keys for UserDefaults
 #define csHourColor       @"hourColor"
 #define csMinuteColor     @"minuteColor"
