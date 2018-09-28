@@ -35,22 +35,6 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 @implementation ClockView
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
-    static dispatch_once_t onceToken;
-
-    dispatch_once(&onceToken, ^{
-        sharedDefaults = [ScreenSaverDefaults defaultsForModuleWithName:[NSBundle bundleForClass:[self class]].bundleIdentifier];
-
-        [sharedDefaults registerDefaults:
-         @{csHourColor:      [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
-           csMinuteColor:    [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
-           csSecondColor:    [NSArchiver archivedDataWithRootObject:[NSColor redColor]],
-           csScaleColor:     [NSArchiver archivedDataWithRootObject:[NSColor whiteColor]],
-           csShadowColor:    [NSArchiver archivedDataWithRootObject:[NSColor grayColor]],
-           csBackgroundColor:[NSArchiver archivedDataWithRootObject:[NSColor blackColor]],
-           csScaleSize:      @0.90f,
-           csShowSecondHand: @YES}];
-
-    });
 
     if ((self = [super initWithFrame:frame isPreview:isPreview])) {
 
@@ -63,6 +47,26 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
     return self;
 }
+
+
+- (void)registerUserDefaults {
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+
+        sharedDefaults = [ScreenSaverDefaults defaultsForModuleWithName:[NSBundle bundleForClass:[self class]].bundleIdentifier];
+        [sharedDefaults registerDefaults:
+         @{csScaleColor:     [self encodedColor:[NSColor whiteColor]],
+           csScaleSize:      @0.90f,
+           csHourColor:      [self encodedColor:[NSColor whiteColor]],
+           csMinuteColor:    [self encodedColor:[NSColor whiteColor]],
+           csSecondColor:    [self encodedColor:[NSColor redColor]],
+           csShowSecondHand: @YES}];
+    });
+}
+
+
+#pragma mark - Configuration Sheet
 
 
 - (BOOL)hasConfigureSheet {
