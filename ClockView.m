@@ -17,14 +17,11 @@
 // Extract a color object from the defaults
 #define COLOR(N)  ((NSColor*)[NSUnarchiver unarchiveObjectWithData:[sharedDefaults objectForKey:(N)]])
 
-
-// Key constants
+// Keys for UserDefaults
 #define csHourColor       @"hourColor"
 #define csMinuteColor     @"minuteColor"
 #define csSecondColor     @"secondColor"
 #define csScaleColor      @"scaleColor"
-#define csShadowColor     @"shadowColor"
-#define csBackgroundColor @"backgroundColor"
 #define csScaleSize       @"scaleSize"
 #define csShowSecondHand  @"showSecondHand"
 
