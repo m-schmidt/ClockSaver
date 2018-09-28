@@ -143,7 +143,9 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 - (void)animateOneFrame {
 
-    NSCalendarDate *now = [NSCalendarDate calendarDate];
+    // Get current time
+    NSCalendarUnit components = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDateComponents *now = [[NSCalendar currentCalendar] components:components fromDate:[NSDate date]];
 
     // Blank screen
     [COLOR(csBackgroundColor) set];
@@ -152,20 +154,20 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     // Draw clock
     [self drawScale];
 
-    [self drawHandAtAngle:([now hourOfDay] % 12) * 30.0 + [now minuteOfHour] * 0.5
+    [self drawHandAtAngle:([now hour] % 12) * 30.0 + [now minute] * 0.5
                    length:600.0
                     width:55.0
                     color:COLOR(csHourColor)
                      disc:NO];
 
-    [self drawHandAtAngle:[now minuteOfHour] * 6.0 + [now secondOfMinute] * 0.1
+    [self drawHandAtAngle:[now minute] * 6.0 + [now second] * 0.1
                    length:900.0
                     width:40.0
                     color:COLOR(csMinuteColor)
                      disc:YES];
 
     if ([sharedDefaults boolForKey:csShowSecondHand])
-        [self drawHandAtAngle:[now secondOfMinute] * 6.0
+        [self drawHandAtAngle:[now second] * 6.0
                        length:900.0
                         width:30.0
                         color:COLOR(csSecondColor)
