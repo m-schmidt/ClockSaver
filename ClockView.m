@@ -124,10 +124,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     baseTransform = [NSAffineTransform transform];
 
     // Move square of clock area to center of screen
-    CGFloat minSize = min (frame.size.width, frame.size.height);
-
-    minSize *= [sharedDefaults floatForKey:csScaleSize];
-
+    CGFloat minSize = min (frame.size.width, frame.size.height) * scaleSize;
     [baseTransform translateXBy:(frame.size.width  - minSize) / 2.0
                             yBy:(frame.size.height - minSize) / 2.0];
 
@@ -148,7 +145,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     NSDateComponents *now = [[NSCalendar currentCalendar] components:components fromDate:[NSDate date]];
 
     // Blank screen
-    [COLOR(csBackgroundColor) set];
+    [[NSColor blackColor] set];
     NSRectFill (self.bounds);
 
     // Draw clock
@@ -157,20 +154,20 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     [self drawHandAtAngle:([now hour] % 12) * 30.0 + [now minute] * 0.5
                    length:600.0
                     width:55.0
-                    color:COLOR(csHourColor)
+                    color:hourColor
                      disc:NO];
 
     [self drawHandAtAngle:[now minute] * 6.0 + [now second] * 0.1
                    length:900.0
                     width:40.0
-                    color:COLOR(csMinuteColor)
+                    color:minuteColor
                      disc:YES];
 
-    if ([sharedDefaults boolForKey:csShowSecondHand])
+    if (showSecondHand)
         [self drawHandAtAngle:[now second] * 6.0
                        length:900.0
                         width:30.0
-                        color:COLOR(csSecondColor)
+                        color:secondColor
                          disc:YES];
 }
 
@@ -230,7 +227,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     CGFloat shadowWidth = 1.0;
 
     // Draw shadow for hand
-    [COLOR(csShadowColor) set];
+    [[NSColor grayColor] set];
 
     if (disc)
         [self drawDiscWithRadius:width * 1.3 + shadowWidth];
@@ -250,7 +247,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 // Draws the clock scale
 - (void)drawScale {
 
-    [COLOR(csScaleColor) set];
+    [scaleColor set];
     int angle;
 
     // For each minute...
