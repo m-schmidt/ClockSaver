@@ -16,8 +16,15 @@
 
 @interface ClockView : ScreenSaverView
 {
-    NSMutableDictionary *defaults;
-    NSAffineTransform   *baseTransform;
+    NSAffineTransform *baseTransform;
+
+    NSColor *scaleColor;
+    NSColor *hourColor;
+    NSColor *minuteColor;
+    NSColor *secondColor;
+
+    CGFloat scaleSize;
+    BOOL showSecondHand;
 }
 
 @property (strong, nonatomic) IBOutlet NSWindow *configSheet;

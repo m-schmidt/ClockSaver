@@ -1,0 +1,33 @@
+
+/* Class = "NSTextFieldCell"; title = "small"; ObjectID = "5lG-ge-bOG"; */
+"5lG-ge-bOG.title" = "小";
+
+/* Class = "NSButtonCell"; title = "Show Second-Hand"; ObjectID = "CtA-Gz-KGp"; */
+"CtA-Gz-KGp.title" = "秒針を表示";
+
+/* Class = "NSWindow"; title = "ClockSaver"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "ClockSaver";
+
+/* Class = "NSTextFieldCell"; title = "Minute-hand:"; ObjectID = "X9P-DP-QAf"; */
+"X9P-DP-QAf.title" = "分針:";
+
+/* Class = "NSTextFieldCell"; title = "large"; ObjectID = "eF1-FT-1P7"; */
+"eF1-FT-1P7.title" = "大";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "fWZ-c1-Gtg"; */
+"fWZ-c1-Gtg.title" = "OK";
+
+/* Class = "NSTextFieldCell"; title = "Second-hand:"; ObjectID = "hWy-Zd-rpl"; */
+"hWy-Zd-rpl.title" = "秒針:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mnZ-hs-MNL"; */
+"mnZ-hs-MNL.title" = "キャンセル";
+
+/* Class = "NSTextFieldCell"; title = "Size:"; ObjectID = "que-aa-Nww"; */
+"que-aa-Nww.title" = "サイズ:";
+
+/* Class = "NSTextFieldCell"; title = "Hour-hand:"; ObjectID = "rTJ-hd-R3t"; */
+"rTJ-hd-R3t.title" = "時針:";
+
+/* Class = "NSTextFieldCell"; title = "Scale:"; ObjectID = "sIs-Mp-gme"; */
+"sIs-Mp-gme.title" = "スケール:";

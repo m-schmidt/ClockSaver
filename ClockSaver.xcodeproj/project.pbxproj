@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4D1F892407F352E9007DCE50 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167EFE841241C02AAC07 /* InfoPlist.strings */; };
 		4D3D994A07EF3D1C002E925D /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3D994907EF3D1C002E925D /* ScreenSaver.framework */; };
 		4D3D996B07EF3E5D002E925D /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D996907EF3E5D002E925D /* ClockView.m */; };
-		4DBBA7F915D6AF40006B47DC /* configure.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBA7F715D6AF40006B47DC /* configure.xib */; };
+		4D6F27B1215D8DEC00FBB5D1 /* configureSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6F27B3215D8DEC00FBB5D1 /* configureSheet.xib */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,9 +23,10 @@
 		4D3D994907EF3D1C002E925D /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
 		4D3D996807EF3E5D002E925D /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockView.h; sourceTree = "<group>"; };
 		4D3D996907EF3E5D002E925D /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockView.m; sourceTree = "<group>"; };
-		4DBBA7F815D6AF40006B47DC /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/configure.xib; sourceTree = "<group>"; };
-		4DBBA7FA15D6AF48006B47DC /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/configure.xib; sourceTree = "<group>"; };
-		4DBBA7FB15D6AF4F006B47DC /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/configure.xib; sourceTree = "<group>"; };
+		4D6F27B4215D8DFB00FBB5D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/configureSheet.xib; sourceTree = "<group>"; };
+		4D6F27BC215D9D3200FBB5D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/configureSheet.strings; sourceTree = "<group>"; };
+		4D6F27BE215D9D3500FBB5D1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/configureSheet.strings; sourceTree = "<group>"; };
+		4D6F27C0215D9D3800FBB5D1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/configureSheet.strings; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* ClockSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClockSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,9 +70,9 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4DBBA7F715D6AF40006B47DC /* configure.xib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167EFE841241C02AAC07 /* InfoPlist.strings */,
+				4D6F27B3215D8DEC00FBB5D1 /* configureSheet.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -140,14 +141,17 @@
 				};
 			};
 			buildConfigurationList = 4D418548086DA3720050B210 /* Build configuration list for PBXProject "ClockSaver" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				en,
 				English,
 				German,
 				Japanese,
+				Base,
+				en,
+				de,
+				ja,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* ClockSaver */;
 			projectDirPath = "";
@@ -163,8 +167,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6F27B1215D8DEC00FBB5D1 /* configureSheet.xib in Resources */,
 				4D1F892407F352E9007DCE50 /* InfoPlist.strings in Resources */,
-				4DBBA7F915D6AF40006B47DC /* configure.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +231,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4DBBA7F715D6AF40006B47DC /* configure.xib */ = {
+		4D6F27B3215D8DEC00FBB5D1 /* configureSheet.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4DBBA7F815D6AF40006B47DC /* English */,
-				4DBBA7FA15D6AF48006B47DC /* German */,
-				4DBBA7FB15D6AF4F006B47DC /* Japanese */,
+				4D6F27B4215D8DFB00FBB5D1 /* Base */,
+				4D6F27BC215D9D3200FBB5D1 /* en */,
+				4D6F27BE215D9D3500FBB5D1 /* de */,
+				4D6F27C0215D9D3800FBB5D1 /* ja */,
 			);
-			name = configure.xib;
+			name = configureSheet.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

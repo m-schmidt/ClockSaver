@@ -1,0 +1,33 @@
+
+/* Class = "NSTextFieldCell"; title = "small"; ObjectID = "5lG-ge-bOG"; */
+"5lG-ge-bOG.title" = "klein";
+
+/* Class = "NSButtonCell"; title = "Show Second-Hand"; ObjectID = "CtA-Gz-KGp"; */
+"CtA-Gz-KGp.title" = "Sekundenzeiger sichtbar";
+
+/* Class = "NSWindow"; title = "ClockSaver"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "ClockSaver";
+
+/* Class = "NSTextFieldCell"; title = "Minute-hand:"; ObjectID = "X9P-DP-QAf"; */
+"X9P-DP-QAf.title" = "Minutenzeiger:";
+
+/* Class = "NSTextFieldCell"; title = "large"; ObjectID = "eF1-FT-1P7"; */
+"eF1-FT-1P7.title" = "groß";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "fWZ-c1-Gtg"; */
+"fWZ-c1-Gtg.title" = "OK";
+
+/* Class = "NSTextFieldCell"; title = "Second-hand:"; ObjectID = "hWy-Zd-rpl"; */
+"hWy-Zd-rpl.title" = "Sekundenzeiger:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "mnZ-hs-MNL"; */
+"mnZ-hs-MNL.title" = "Abbrechen";
+
+/* Class = "NSTextFieldCell"; title = "Size:"; ObjectID = "que-aa-Nww"; */
+"que-aa-Nww.title" = "Größe:";
+
+/* Class = "NSTextFieldCell"; title = "Hour-hand:"; ObjectID = "rTJ-hd-R3t"; */
+"rTJ-hd-R3t.title" = "Stundenzeiger:";
+
+/* Class = "NSTextFieldCell"; title = "Scale:"; ObjectID = "sIs-Mp-gme"; */
+"sIs-Mp-gme.title" = "Ziffernblatt:";
