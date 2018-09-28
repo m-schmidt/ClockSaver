@@ -38,10 +38,8 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
     if ((self = [super initWithFrame:frame isPreview:isPreview])) {
 
-        defaults       = [[NSMutableDictionary alloc] init];
-        baseTransform  = nil;
-
         self.animationTimeInterval = 1.0;
+        [self registerUserDefaults];
         [self computeBaseTransformForFrame:frame];
     }
 
