@@ -32,18 +32,6 @@
 static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 
-@interface ClockView (DrawingPrimitives)
-
-- (void)computeBaseTransformForFrame:(NSRect)frame;
-
-- (void)drawRadialAtAngle:(CGFloat)alpha r0:(CGFloat)r0 r1:(CGFloat)r1 width:(CGFloat)width;
-- (void)drawDiscWithRadius:(CGFloat)radius;
-- (void)drawHandAtAngle:(CGFloat)angle length:(CGFloat)length width:(CGFloat)width color:(NSColor *)color disc:(BOOL)disc;
-- (void)drawScale;
-
-@end
-
-
 @implementation ClockView
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
