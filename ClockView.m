@@ -139,13 +139,19 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 
 - (void)animateOneFrame {
 
+    [self setNeedsDisplay:YES];
+}
+
+
+- (void)drawRect:(NSRect)rect {
+
     // Get current time
     NSCalendarUnit components = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSDateComponents *now = [[NSCalendar currentCalendar] components:components fromDate:[NSDate date]];
 
     // Blank screen
     [[NSColor blackColor] set];
-    NSRectFill (self.bounds);
+    NSRectFill (rect);
 
     // Draw clock face
     [self drawScaleWithColor:scaleColor];
