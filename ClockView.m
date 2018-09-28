@@ -114,8 +114,7 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
-#pragma mark -
-#pragma mark Drawing Routines
+#pragma mark - Drawing Routines
 
 
 // Basic transformation matrix for drawing operations
@@ -148,8 +147,8 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     [[NSColor blackColor] set];
     NSRectFill (self.bounds);
 
-    // Draw clock
-    [self drawScale];
+    // Draw clock face
+    [self drawScaleWithColor:scaleColor];
 
     [self drawHandAtAngle:([now hour] % 12) * 30.0 + [now minute] * 0.5
                    length:600.0
@@ -175,18 +174,17 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 // Draws a radial line segment (clock hands and scale)
 - (void)drawRadialAtAngle:(CGFloat)alpha r0:(CGFloat)r0 r1:(CGFloat)r1 width:(CGFloat)width {
 
-    // Transform screen coordinates
+    NSGraphicsContext *context = [NSGraphicsContext currentContext];
+    [context saveGraphicsState];
+
+    // Rotate screen
     NSAffineTransform *transform = [NSAffineTransform transform];
     [transform appendTransform:baseTransform];
     [transform rotateByDegrees:90 - alpha];
-
-    // Draw a line
-    NSGraphicsContext *context = [NSGraphicsContext currentContext];
-    NSBezierPath *path         = [NSBezierPath bezierPath];
-
-    [context saveGraphicsState];
     [transform concat];
 
+    // Draw line segment
+    NSBezierPath *path = [NSBezierPath bezierPath];
     path.lineWidth = width;
     [path moveToPoint:NSMakePoint (r0, 0.0)];
     [path lineToPoint:NSMakePoint (r1, 0.0)];
@@ -199,17 +197,16 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 // Draws a circle located at the origin (part of minuts and second hand)
 - (void)drawDiscWithRadius:(CGFloat)radius {
 
-    // Transform screen coordinates
+    NSGraphicsContext *context = [NSGraphicsContext currentContext];
+    [context saveGraphicsState];
+
+    // Move to center of screen
     NSAffineTransform *transform = [NSAffineTransform transform];
     [transform appendTransform:baseTransform];
-
-    // Draw a circle
-    NSGraphicsContext *context = [NSGraphicsContext currentContext];
-    NSBezierPath *path         = [NSBezierPath bezierPath];
-
-    [context saveGraphicsState];
     [transform concat];
 
+    // Draw a circle
+    NSBezierPath *path = [NSBezierPath bezierPath];
     [path appendBezierPathWithArcWithCenter:NSZeroPoint radius:radius startAngle:0.0 endAngle:360.0];
     [path fill];
 
@@ -229,30 +226,30 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
     // Draw shadow for hand
     [[NSColor grayColor] set];
 
-    if (disc)
+    if (disc) {
         [self drawDiscWithRadius:width * 1.3 + shadowWidth];
+    }
 
     [self drawRadialAtAngle:angle r0:0.75 * width r1:length + shadowWidth width:width  + shadowWidth];
 
     // Draw hand itself
     [color set];
 
-    if (disc)
+    if (disc) {
         [self drawDiscWithRadius:width * 1.3];
+    }
 
     [self drawRadialAtAngle:angle r0:0.75 * width r1:length width:width];
 }
 
 
 // Draws the clock scale
-- (void)drawScale {
+- (void)drawScaleWithColor:(NSColor *)color {
 
-    [scaleColor set];
-    int angle;
+    [color set];
 
     // For each minute...
-    for (angle = 0; angle < 360; angle += 6) {
-
+    for (int angle = 0; angle < 360; angle += 6) {
         if (angle % 30) {
             [self drawRadialAtAngle:angle r0:920.0 r1:980.0 width:15.0];
         }
