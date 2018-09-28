@@ -114,6 +114,26 @@ static ScreenSaverDefaults __strong *sharedDefaults = nil;
 }
 
 
+#pragma mark - Encoding of Colors for UserPreferences
+
+
+- (id)encodedColor:(NSColor *)color {
+
+    return [NSKeyedArchiver archivedDataWithRootObject:color requiringSecureCoding:YES error:NULL];
+}
+
+
+- (NSColor *)decodedColor:(id)data {
+
+    NSColor *color = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSColor class] fromData:data error:NULL];
+
+    if (color == nil) {
+        color = [NSColor whiteColor];
+    }
+    return color;
+}
+
+
 #pragma mark - Drawing Routines
 
 
