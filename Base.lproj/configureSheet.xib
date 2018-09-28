@@ -138,6 +138,9 @@
                             <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
+                            <connections>
+                                <action selector="performCancel:" target="-2" id="wW7-cs-qWw"/>
+                            </connections>
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8vT-2V-CEC">
@@ -149,6 +152,9 @@ Gw
 DQ
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="performOK:" target="-2" id="5y1-Fj-Gxf"/>
+                        </connections>
                     </button>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="pXc-tE-spi">
                         <rect key="frame" x="146" y="83" width="143" height="22"/>
