@@ -142,12 +142,9 @@
 			};
 			buildConfigurationList = 4D418548086DA3720050B210 /* Build configuration list for PBXProject "ClockSaver" */;
 			compatibilityVersion = "Xcode 10.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				German,
-				Japanese,
 				Base,
 				en,
 				de,
